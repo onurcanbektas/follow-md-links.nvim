@@ -117,7 +117,7 @@ local function follow_local_link(link)
 			cmd(string.format("%s %s %s", "!mkdir", "-p", fn.fnameescape(path)))
 		end
 	end
-
+        modified_link = path
 	if modified_link then
 		if line_number then
 			cmd(string.format("%s +%s %s", "e", line_number, fn.fnameescape(modified_link)))
