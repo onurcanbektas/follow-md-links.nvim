@@ -118,13 +118,6 @@ local function follow_local_link(link)
 		end
 	end
 
-	-- attempt to add an extension and open
-	if path:sub(-3) ~= ".md" and vim.fn.glob(path) == "" then
-		modified_link = path .. ".md"
-	else
-		modified_link = path
-	end
-
 	if modified_link then
 		if line_number then
 			cmd(string.format("%s +%s %s", "e", line_number, fn.fnameescape(modified_link)))
